@@ -45,6 +45,8 @@ console.log("EveryCommand is commented :))");
    //Tells us weather given path is of file or directory
 //   let randomPath= "C:\\Users\\DHIRAJ\\Desktop\\PepCoding\\NodeJS\\Web Dev";
 
+//here we give path in lstatSync
+
 //   let isFile=fs.lstatSync(randomPath).isFile();
 //   let isDir=fs.lstatSync(randomPath).isDirectory();
 

@@ -5,13 +5,23 @@ function treeFn(dirPath){
     let folderContent=fs.readdirSync(dirPath);
    
     console.log(path.basename(dirPath));
+   
     
      for(let i=0;i<folderContent.length;i++){
-    
-         console.log("\t " + folderContent[i]);
+        let ab=path.join(dirPath,folderContent[i]);
+    let ans=isFolder(ab);
+    if(ans==true){
+        console.log("\t " + ">"+ " "  +folderContent[i]); 
+    }
+      else{console.log("\t " + folderContent[i]);}   
 
      }
 
+}
+
+function isFolder(folderContent){
+    let ans=fs.lstatSync(folderContent).isDirectory();
+    return ans;
 }
 
 module.exports={
