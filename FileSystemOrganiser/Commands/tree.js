@@ -9,6 +9,7 @@ function treeFn(dirPath){
     
      for(let i=0;i<folderContent.length;i++){
         let ab=path.join(dirPath,folderContent[i]);
+        //to put arrow in front of folder >
     let ans=isFolder(ab);
     if(ans==true){
         console.log("\t " + ">"+ " "  +folderContent[i]); 

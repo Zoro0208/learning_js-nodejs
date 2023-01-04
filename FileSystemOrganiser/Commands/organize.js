@@ -40,13 +40,13 @@ function organizeHelper(dirPath){
      }
 
 }
-
+//to check given path is of file or not
 function isfile(assetPath){
         //file or folder
          let ans=  fs.lstatSync(assetPath).isFile();
       return ans;
 }
-
+// to grt propertie from objects
 function getType(assetPath){
 
     let extName=path.extname(assetPath);
@@ -67,6 +67,7 @@ function getType(assetPath){
     return "others";
 }
 
+// copy content 
 function copyToThatType(assetPath,type,organizeDirPath ){
      //organized_dir->type ale folder create
     let destFolderPath= path.join(organizeDirPath,type);
