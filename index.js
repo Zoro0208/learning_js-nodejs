@@ -40,7 +40,7 @@
 // fn();
 // console.log("41",a);
 
-//*************SCOPE*********
+//*************SCOPE**********
 
 var a=10;
 false
@@ -58,4 +58,5 @@ function c(){
 console.log("58",a);
 c();
 console.log("60",a);
+
 
