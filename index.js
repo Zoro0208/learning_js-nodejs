@@ -100,7 +100,7 @@
 //   console.log("fn is function");
 //   return 10;
 // }
-//you have to put address of fn in variable anotherFn
+// // you have to put address of fn in variable anotherFn
 // let anotherFn=fn;
 // let anotherReturnValue=fn();
 // console.log("anotherReturnValue",anotherReturnValue);
@@ -124,7 +124,7 @@
 // }
 
 
-//return from a function
+// return from a function
 // function fn1(){
 //   let obj={name:"Dhiraj"};
 //   return obj;
@@ -143,3 +143,44 @@
 // let inner=outer();
 // console.log("*******After this line i will call inner**********");
 // inner();
+
+
+//****************CLOSURE**************************
+// what is closure??-->> Closure is a feature of javascript which enables the access of variable that are declared outside even if the outer function is removed from the stack...............
+
+function getFirstName(firstName){
+        console.log("firstName",firstName);
+   return function getLastName(lastName){
+        console.log("lastName",lastName); 
+   return function printFullName(){
+        console.log("MY NAme is",firstName,lastName);
+   }
+}
+}
+
+let getLastName=getFirstName("Dhiraj");
+console.log("first name is printed and get first name stack se hut gaya");
+
+let printFullName=getLastName("Dhiman");
+console.log("last name is printed and get last name stack se hut gaya");
+
+printFullName();
+
+
+// closure example 2........
+
+function printArrFn(){
+     let arr=[];
+     for(let i=0;i<3;i++){
+          function printI(){
+               console.log("i",i);
+          }
+          arr.push(printI);
+     }
+     return arr;
+}
+
+let arrFn=printArrFn();
+arrFn[0]();//arr ke zero index pe jo printI function ka address store tha (arrFn[0]()) isse usse call kiya hai.....
+arrFn[1]();
+arrFn[2]();
